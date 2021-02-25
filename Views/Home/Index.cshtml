@@ -1,19 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IQueryable<Book>
+@model BookListViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Amazon 2.0</h1>
-    @foreach (var x in Model)
-    {
-        <div>
-            <h4>@x.Title</h4>
-            <p>Author: @x.Author</p>
-            <p>Publisher: @x.Publisher</p>
-            <p>ISBN: @x.ISBN</p>
-            <p>Category: @x.Category</p>
-            <p>Price: $@x.Price</p>
+
+@foreach (var x in Model.Books)
+{
+    <div class="card card-outline-primary m-1 p1">
+        <h4>@x.Title</h4>
+        <div class="container">
+            <div class="row justify-content-lg-center">
+                <div class="col-lg-2">
+                    Author: @x.Author<br />
+                    Publisher: @x.Publisher<br />
+                    Pages: @x.Pages
+                </div>
+                <div class="col-lg-2">
+                    ISBN: @x.ISBN<br />
+                    Price: $@x.Price<br />
+                </div>
+            </div>
+            <br />Category: @x.Category<br />
         </div>
-    }
-</div>
+    </div>
+}
+<div page-model="@Model.PagingInfo" page-action="Index"
+     page-classes-enabled="true"
+     page-class="btn btn-light "
+     page-class-normal="btn-outline-dark"
+     page-class-selected = "btn-primary"
+     class="btn-group m-1 text-center"
+     ></div>

@@ -3,14 +3,16 @@ using Assignment5.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Assignment5.Migrations
 {
     [DbContext(typeof(Assignment5DBContext))]
-    partial class Assignment5DBContextModelSnapshot : ModelSnapshot
+    [Migration("20210225045634_Inital4")]
+    partial class Inital4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
