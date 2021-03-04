@@ -10,14 +10,16 @@ namespace Assignment5.Migrations
                 name: "Books",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(nullable: false),
+                    Author = table.Column<string>(nullable: false),
+                    Publisher = table.Column<string>(nullable: false),
+                    ISBN = table.Column<string>(nullable: true),
+                    Classification = table.Column<string>(nullable: false),
+                    Category = table.Column<string>(nullable: false),
+                    Price = table.Column<double>(nullable: false),
+                    Pages = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

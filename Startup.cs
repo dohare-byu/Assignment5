@@ -29,7 +29,7 @@ namespace Assignment5
 
             services.AddDbContext<Assignment5DBContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:Assignment5Connection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:Assignment5Connection"]);
             });
 
             services.AddScoped<IAssignment5Repository, EFAssignment5Repository>();
@@ -58,8 +58,23 @@ namespace Assignment5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    "catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+                endpoints.MapControllerRoute(
+                    "page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+                endpoints.MapControllerRoute(
+                    "category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 }
+                    );
+                endpoints.MapControllerRoute(
                    "pagination",
-                   "Books/P{page}",
+                   "P{page}",
                    new { Controller = "Home", action = "Index" });
                 endpoints.MapDefaultControllerRoute();
             });
