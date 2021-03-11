@@ -6,32 +6,33 @@
     <title>@ViewData["Title"] - Assignment5</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Assignment5</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Assignment5</a>
+                <div>
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Book List</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Book List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <div class="nav-item text-right text-white">
+                        <vc:cart-summary />
+                    </div>
                 </div>
+                
             </div>
         </nav>
     </header>
     <div class="container text-center">
         <div class="m-2 p-2">
-            <h1>Amazon 2.0</h1>
+            <h1>Amazon 0.5</h1>
             <vc:navigation-menu />
         </div>
         <div class="container">

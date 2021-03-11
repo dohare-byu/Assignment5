@@ -6,24 +6,7 @@
 
 @foreach (var x in Model.Books)
 {
-    <div class="card card-outline-primary m-1 p1">
-        <h4>@x.Title</h4>
-        <div class="container">
-            <div class="row justify-content-lg-center">
-                <div class="col-lg-2">
-                    Author: @x.Author<br />
-                    Publisher: @x.Publisher<br />
-                    Pages: @x.Pages<br />
-                    Category: @x.Category
-                </div>
-                <div class="col-lg-2">
-                    ISBN: @x.ISBN<br />
-                    Price: $@x.Price<br />
-                    Classification: @x.Classification
-                </div>
-            </div>
-        </div>
-    </div>
+    <partial name="ProjectSummary" model="x" />
 }
 <div page-model="@Model.PagingInfo" page-action="Index"
      page-classes-enabled="true"
